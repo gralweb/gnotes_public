@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    // place-items: center;
+    
+    &.active {
+        overflow: hidden;
+    }
+}
+
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gn_main_route_view {
+    min-height: 90vh;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.gn_title_main {
+    position: relative;
+    z-index: 111;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    transform: translateY(15px);
+
+    &:not(.gn_title_main_note) {
+        padding-bottom: 24px;
+        transform: translateY(5px);
+
+        @media screen and (max-width: $width-phone-2) {
+            padding-bottom: 5px;
+            transform: translateY(-15px);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-hover;
+
+        &:hover {
+            color: $color-acent;
+        }
+    }
+
+    h1 {
+        color: $color-hover;
+        font: {
+            size: 1.7rem;
+            family: $font-title-bold;
+        }
+
+        @media screen and (max-width: $width-phone-4) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .gn_note_tags {
+        display: flex;
+        gap: 5px;
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            color: $color-acent;
+            font: {
+                size: 1.2em;
+                family: 'texturina-bold'
+            }
+        }
+    }
+
+    .gn_note_date {
+        display: flex;
+        padding: 10px 0px;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media (max-width: 901px) {
+            justify-content: flex-start;
+        }
+
+        span {
+            text-transform: uppercase;
+            color: $color-hover;
+            font: {
+                family: $font-read-light;
+                weight: bold;
+                size: 1em;
+            }
+            @media (max-width: 901px) {
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+.gn_main {
+    display: grid;
+    height: 100%;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    // grid-template-rows: repeat(auto-fit, minmax(150px, 200px));
+
+    margin: auto;
+
+    @media screen and (max-width: $width-phone-3) {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}

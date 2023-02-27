@@ -1,0 +1,28 @@
+@mixin neumorShadow {
+	border-radius: 30px;
+	background: #55b9f3;
+	box-shadow: 20px 20px 60px #489dcf,
+	            -20px -20px 60px #62d5ff;
+}
+
+@mixin animLoadScale {
+	transition: all 400ms ease;
+	opacity: .2;
+    transform: scale(0);
+    
+    &.load {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@mixin animLoadFade {
+	transition: all 400ms ease;
+	opacity: 0;
+    transform: translateX(-100px);
+    
+    &.load {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

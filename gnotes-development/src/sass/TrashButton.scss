@@ -1,0 +1,92 @@
+.gn_trash_button {
+	box-shadow: 0 0 17px -8px $color-dark;
+	background: $color-acent;
+	text-decoration: none;
+	position: fixed;
+	display: flex;
+	height: 55px;
+	width: 55px;
+	z-index: 11;
+	right: 15px;
+	bottom: 15px;
+	border-radius: 100%;
+	place-items: center;
+	place-content: center;
+	transition: all 400ms ease;
+	border: 1px solid $color-dark;
+
+	&.visible {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	&.hidden {
+		opacity: .2;
+		transform: scale(0);
+	}
+
+	span {
+		box-shadow: 0 0 17px -8px $color-dark;
+		border: 1px solid $color-dark;
+		background: #D30000;
+		position: absolute;
+		display: flex;
+		top: -15%;
+		right: 5%;
+		width: 20px;
+		height: 20px;
+		color: $color-dark;
+		border-radius: 100%;
+		place-items: center;
+		place-content: center;
+		font: {
+			size: .8em;
+			weight: bold;
+			family: $font-read-light;
+		}
+	}
+
+	i {
+		transition: all 400ms ease;
+		font-size: 1.8em;
+		color: $color-dark;
+
+	}
+	&:hover {
+		i {
+			animation: shake 500ms linear infinite;
+		}
+	}
+	&.new {
+		i {
+			animation: shake 500ms linear infinite;
+		}
+	}
+	@keyframes shake {
+		0%, 100% {
+			transform: rotate(-45deg);
+		}
+		50% {
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.gn_trash_nocontent {
+	display: flex;
+	width: 100%;
+	height: 75vh;
+	text-align: center;
+	place-items: center;
+	place-content: center;
+
+	span {
+		filter: drop-shadow(1px 1px $color-dark);
+		color: $color-dark;
+		font: {
+			size: 1.7em;
+			weight: bold;
+			family: $font-title-bold;
+		}
+	}
+}

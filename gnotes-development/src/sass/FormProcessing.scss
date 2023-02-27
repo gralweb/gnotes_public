@@ -1,0 +1,101 @@
+.gn_form_pross_container {
+	backdrop-filter: blur(3px);
+	position: absolute;
+	overflow: hidden;
+	z-index: 11;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	place-items: center;
+	place-content: center;
+
+	.gn_form_pross_success,
+	.gn_form_pross_fail {
+		box-shadow: 0 0 15px -10px $color-dark;
+		background: $color-light;
+		border-radius: 100%;
+		position: relative;
+		display: flex;
+		width: 110px;
+		height: 110px;
+
+		&::after,
+		&::before {
+			position: absolute;
+			content: '';
+			height: 4px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			border-radius: 30px;
+		}		
+	}
+}
+
+.gn_form_pross_success {
+	&::after,
+	&::before {
+		background: $color-success;
+	}
+
+	&::after {
+		animation: animAfter 650ms linear both;
+		transform: rotate(-45deg) translate(11px, 8px);
+	}
+
+	&::before {
+		animation: animBefore 650ms linear both;
+		transform: rotate(45deg) translate(-5px, 10px);
+	}
+
+	@keyframes animBefore {
+		from {
+			width: 0px;
+		}
+
+		to {
+			width: 30px;
+		}
+	}
+
+	@keyframes animAfter {
+		from {
+			width: 0px;
+		}
+
+		to {
+			width: 45px;
+		}
+	}
+}
+
+.gn_form_pross_fail {
+	&::after,
+	&::before {
+		background: $color-danger;
+		animation: anim 650ms linear both;
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+		animation-delay: 340ms;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	@keyframes anim {
+		from {
+			width: 0px;
+		}
+
+		to {
+			width: 45px;
+		}
+	}
+}

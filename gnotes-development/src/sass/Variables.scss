@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'texturina-regular';
+    src: url('./../assets/fonts/Texturina Regular 400.ttf');
+}
+
+@font-face {
+	font-family: 'texturina-bold';
+    src: url('./../assets/fonts/Texturina Bold 700.ttf');
+}
+
+@font-face {
+	font-family: 'univers';
+    src: url('./../assets/fonts/Univers-light-normal.ttf');
+}
+
+$color-acent: #7076FE;
+$color-hover: #4b556b;
+$color-dark: #292f3a;
+$color-light: #f9f9f9;
+
+$color-brand: #7C2FFF;
+$color-success: #27A700;
+$color-danger: #B00000;
+$color-alert: #C5211F;
+$color-warn: #BB5405;
+
+$max-width: 1280px;
+$min-width: 992px;
+
+$width-tablet: 768px;
+$width-phone-1: 600px;
+$width-phone-2: 475px;
+$width-phone-3: 425px;
+$width-phone-4: 325px;
+
+$font-title-regular: 'texturina-regular';
+$font-title-bold: 'texturina-bold';
+$font-read-light: 'univers';
